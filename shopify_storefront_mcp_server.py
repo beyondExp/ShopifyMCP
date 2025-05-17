@@ -114,7 +114,7 @@ aio_client: Optional[httpx.AsyncClient] = None
 async def get_client() -> httpx.AsyncClient:
     global aio_client
     if aio_client is None:
-        aio_client = httpx.AsyncClient(headers=DEFAULT_HEADERS, timeout=15.0)
+        aio_client = httpx.AsyncClient(headers=DEFAULT_HEADERS, timeout=15.0, verify=False)
     return aio_client
 
 
