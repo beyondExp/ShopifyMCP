@@ -1229,7 +1229,7 @@ if __name__ == "__main__":
     if not ENV_STORE or not ENV_TOKEN:
         print("ℹ️  ENV credentials not set – server will rely on runtime host/token.", file=sys.stderr)
     try:
-        mcp.run(transport="stdio")
+        mcp.run(transport="streamable-http")
     finally:
         if aio_client:
             asyncio.run(aio_client.aclose())
